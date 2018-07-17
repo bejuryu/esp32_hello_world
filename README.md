@@ -16,17 +16,24 @@ Python3 환경이라면, virtualenv등을 이용하여 Python2를 사용하도�
 ### 환경변수 설정
 - esp32 toolchain 경로 설정
 - IDF_PATH 경로 설정
-- **추가** ESP32_ROOT 경로 설정 : ESP32-IDF가 설치된 루트경로 설정
 
-IDF_PATH, PATH 의 졍우 ESP32 공식 문서에 나오는 대로 설정을 따라하면되고, ESP32_ROOT는 CMake 환경에서 include 경로를 찾기위한 환경변수 지정
+IDF_PATH, PATH 의 졍우 ESP32 공식 문서에 나오는 대로 설정을 따라한다.
 
 ```bash
 export IDF_PATH="$HOME/esp/esp-idf"
 export PATH="$PATH:$HOME/esp/xtensa-esp32-elf/bin"
-export ESP32_ROOT="$HOME/esp/xtensa-esp32-elf"
 ```
+
+
+### environments.txt 파일 수정
+environments.default.txt 파일을 environments.txt로 복사 한 후 ESP32_ROOT, IDF_PATH 값을 개인 환경에 맞게 수정.
 
 ## 주의사항
 
 - Clion 환경에서 소스에디팅을 하기위한 설정이므로 flash, debug 등 다른 작업은 동작하지 않음
 - 기본 문서대로 make, make flush, make monitor를 이용한 개발 진행 필요
+
+### For Windows
+
+Aliexpress에서 구매한 ESP32 모듈이고 COM 포트가 **Silicon Labs CP210x USB** 으로 잡히는데 flash가 동작하지 않는다면.
+[https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) 에서 드라이버를 설치 한 후 다시 시도해 본다 . 

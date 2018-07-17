@@ -2,16 +2,18 @@
 cmake_minimum_required(VERSION 3.6)
 project(esp32_hello_world)
 
-set(IDF_PATH $ENV{IDF_PATH})
+include(environments.txt)
+
+find_program(xtensa-esp32-elf-gcc xtensa-esp32-elf-gcc)
+find_program(xtensa-esp32-elf-g++ xtensa-esp32-elf-g++)
 
 set(CMAKE_SYSTEM_NAME xtensa-esp32-elf)
-set(CMAKE_C_COMPILER xtensa-esp32-elf-gcc)
-set(CMAKE_CXX_COMPILER xtensa-esp32-elf-g++)
+set(CMAKE_C_COMPILER ${xtensa-esp32-elf-gcc})
+set(CMAKE_CXX_COMPILER ${xtensa-esp32-elf-g++})
 
-set(CMAKE_FIND_ROOT_PATH $ENV{ESP32_ROOT})
+set(CMAKE_FIND_ROOT_PATH ${ESP32_ROOT})
 
 set(CMAKE_CXX_STANDARD 11)
-
 
 set(COMPONENTS
         app_trace

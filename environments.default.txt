@@ -1,0 +1,5 @@
+
+set(ESP32_ROOT "C:/msys64/opt/xtensa-esp32-elf")
+set(IDF_PATH "C:/msys64/opt/esp/esp-idf")
+
+LIST(APPEND CMAKE_PROGRAM_PATH "${ESP32_ROOT}/bin")
