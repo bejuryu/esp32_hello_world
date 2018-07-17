@@ -10,7 +10,7 @@
 
 ### Python 이슈
 
- ESP32를 flash, monitor 하기위해 pyserial을 사용하는데 ESP-IDF에 기본포함된 pyserial 라이브러리가 python2 용이라 python3 환경에서 사용시 호환성 에러가 발생.
+ESP32를 flash, monitor 하기위해 Python2를 이용 하고, Python3에서 동작시 에러 발생.
 Python3 환경이라면, virtualenv등을 이용하여 Python2를 사용하도록 설정.
 
 ### 환경변수 설정
